@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-
 <html>
-
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
-</body>
-
+  <head>
+    <meta charset="utf-8">
+    <title>Screen Size</title>
+  </head>
+  <body>
+    <div id="sizeInfo">
+      <h1>Width: </h1>
+      <h1>Height: </h1>
+    </div>
+    
+    <script>
+      // function to get and update the window size
+      function updateSize() {
+        // get the window width and height
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        
+        // update the HTML with the window size
+        document.querySelector("#sizeInfo h1:first-of-type").textContent = `Width: ${width}`;
+        document.querySelector("#sizeInfo h1:last-of-type").textContent = `Height: ${height}`;
+      }
+      
+      // call the function to get the initial window size
+      updateSize();
+      
+      // add an event listener to update the window size on resize
+      window.addEventListener("resize", updateSize);
+    </script>
+  </body>
 </html>
